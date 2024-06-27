@@ -4,23 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-      // configuração da meta tag da imagem de compartilhamento
-      const sharePictureMetaTag = document.createElement("meta");
-      sharePictureMetaTag.setAttribute("property", "og:image");
-
-      if (location.href[location.href.length - 1] == "/") {
-        sharePictureMetaTag.setAttribute("content", `${location.href}assets/share-image.jpeg`);
-      } else {
-        sharePictureMetaTag.setAttribute("content", `${location.href}/assets/share-image.jpeg`);
-      }
-
-      document.head.appendChild(sharePictureMetaTag);
-    </script>
-
+    <meta property="og:image" content="https://www.dominio.com/assets/share-picture.jpeg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="600px" />
     <meta property="og:image:height" content="600px" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Marcelinho De Lima</title>
   </head>
@@ -38,7 +32,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      gap: 20px;
       background-color: #000072;
+      color: white;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      padding: 20px;
     }
 
     #follow {
@@ -84,6 +84,9 @@
       loading="lazy"
     ></iframe>
 
+    <h1>Dê o último passo parar confirmar sua presença no camarim</h1>
+    <p>Clique no botão "seguir" e confirma sua presença no Camarim</p>
+
     <video id="main-video" controls>
       <source src="assets/marcelinho.mp4" type="video/mp4" />
       Your browser does not support the video tag.
@@ -97,10 +100,6 @@
       video.onended = () => {
         follow.setAttribute("data-show", "");
       };
-
-      setTimeout(() => {
-        // location.href = "https://www.google.com";
-      }, 8000);
     </script>
   </body>
 </html>
